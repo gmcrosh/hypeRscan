@@ -1,3 +1,4 @@
 *.so
-* .o
+*.o
 Makevars
+.Rproj.user

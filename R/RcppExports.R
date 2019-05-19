@@ -5,3 +5,7 @@ hs_str_count <- function(Rstring, Rpattern) {
     .Call(`_hypeRscan_hs_str_count`, Rstring, Rpattern)
 }
 
+hs_str_count_vector <- function(Rstring, Rpattern) {
+    .Call(`_hypeRscan_hs_str_count_vector`, Rstring, Rpattern)
+}
+
