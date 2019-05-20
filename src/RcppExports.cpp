@@ -6,33 +6,33 @@
 using namespace Rcpp;
 
 // hs_str_count
-int hs_str_count(Rcpp::String Rstring, Rcpp::String Rpattern);
+Rcpp::NumericVector hs_str_count(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern);
 RcppExport SEXP _hypeRscan_hs_str_count(SEXP RstringSEXP, SEXP RpatternSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::String >::type Rstring(RstringSEXP);
-    Rcpp::traits::input_parameter< Rcpp::String >::type Rpattern(RpatternSEXP);
-    rcpp_result_gen = Rcpp::wrap(hs_str_count(Rstring, Rpattern));
-    return rcpp_result_gen;
-END_RCPP
-}
-// hs_str_count_vector
-Rcpp::NumericVector hs_str_count_vector(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern);
-RcppExport SEXP _hypeRscan_hs_str_count_vector(SEXP RstringSEXP, SEXP RpatternSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Rstring(RstringSEXP);
     Rcpp::traits::input_parameter< Rcpp::String >::type Rpattern(RpatternSEXP);
-    rcpp_result_gen = Rcpp::wrap(hs_str_count_vector(Rstring, Rpattern));
+    rcpp_result_gen = Rcpp::wrap(hs_str_count(Rstring, Rpattern));
+    return rcpp_result_gen;
+END_RCPP
+}
+// hs_str_detect
+Rcpp::LogicalVector hs_str_detect(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern);
+RcppExport SEXP _hypeRscan_hs_str_detect(SEXP RstringSEXP, SEXP RpatternSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Rstring(RstringSEXP);
+    Rcpp::traits::input_parameter< Rcpp::String >::type Rpattern(RpatternSEXP);
+    rcpp_result_gen = Rcpp::wrap(hs_str_detect(Rstring, Rpattern));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
     {"_hypeRscan_hs_str_count", (DL_FUNC) &_hypeRscan_hs_str_count, 2},
-    {"_hypeRscan_hs_str_count_vector", (DL_FUNC) &_hypeRscan_hs_str_count_vector, 2},
+    {"_hypeRscan_hs_str_detect", (DL_FUNC) &_hypeRscan_hs_str_detect, 2},
     {NULL, NULL, 0}
 };
 

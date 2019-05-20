@@ -10,23 +10,7 @@ static int countHandler(unsigned int id, unsigned long long from,
 }
 
 // [[Rcpp::export]]
-int hs_str_count(Rcpp::String Rstring, Rcpp::String Rpattern) {
-  std::string cppstring, cpppattern;
-  cppstring = std::string(Rstring);
-  cpppattern = std::string(Rpattern);
-  size_t matchCount;
-  matchCount = 0;
-  hs_database_t *database;
-  hs_compile_error_t *compile_err;
-  hs_compile(cpppattern.c_str(), HS_FLAG_DOTALL, HS_MODE_BLOCK, NULL, &database, &compile_err);
-  hs_scratch_t *scratch = NULL;
-  hs_alloc_scratch(database, &scratch);
-  hs_scan(database, cppstring.c_str(), cppstring.size(), 0, scratch, countHandler, &matchCount);
-  return matchCount;
-}
-
-// [[Rcpp::export]]
-Rcpp::NumericVector hs_str_count_vector(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern) {
+Rcpp::NumericVector hs_str_count(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern) {
     int n = Rstring.size();
     Rcpp::NumericVector out(n);
     std::string cppstring, cpppattern;
@@ -43,5 +27,7 @@ Rcpp::NumericVector hs_str_count_vector(Rcpp::CharacterVector Rstring, Rcpp::Str
       hs_scan(database, cppstring.c_str(), cppstring.size(), 0, scratch, countHandler, &matchCount);
       out[i] = matchCount;
     }
+    hs_free_scratch(scratch);
+    hs_free_database(database);
     return out;
 }
