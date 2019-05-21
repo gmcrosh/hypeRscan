@@ -29,10 +29,23 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// hs_str_location
+NumericMatrix hs_str_location(CharacterVector Rstring, String Rpattern);
+RcppExport SEXP _hypeRscan_hs_str_location(SEXP RstringSEXP, SEXP RpatternSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type Rstring(RstringSEXP);
+    Rcpp::traits::input_parameter< String >::type Rpattern(RpatternSEXP);
+    rcpp_result_gen = Rcpp::wrap(hs_str_location(Rstring, Rpattern));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_hypeRscan_hs_str_count", (DL_FUNC) &_hypeRscan_hs_str_count, 2},
     {"_hypeRscan_hs_str_detect", (DL_FUNC) &_hypeRscan_hs_str_detect, 2},
+    {"_hypeRscan_hs_str_location", (DL_FUNC) &_hypeRscan_hs_str_location, 2},
     {NULL, NULL, 0}
 };
 

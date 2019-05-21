@@ -9,3 +9,7 @@ hs_str_detect <- function(Rstring, Rpattern) {
     .Call(`_hypeRscan_hs_str_detect`, Rstring, Rpattern)
 }
 
+hs_str_location <- function(Rstring, Rpattern) {
+    .Call(`_hypeRscan_hs_str_location`, Rstring, Rpattern)
+}
+
