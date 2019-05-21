@@ -30,7 +30,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // hs_str_location
-NumericMatrix hs_str_location(CharacterVector Rstring, String Rpattern);
+IntegerVector hs_str_location(CharacterVector Rstring, String Rpattern);
 RcppExport SEXP _hypeRscan_hs_str_location(SEXP RstringSEXP, SEXP RpatternSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
