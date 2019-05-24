@@ -1,6 +1,6 @@
 # hypeRscan
 
-Rcpp pakcage to create [hyperscan](https://www.google.com) string functions
+Rcpp package to create [hyperscan](https://www.google.com) string functions
 
 ## Install
 
