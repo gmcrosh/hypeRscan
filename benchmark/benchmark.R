@@ -3,7 +3,7 @@ library(hypeRscan)
 library(stringr)
 library(ggplot2)
 
-awtew <- scan("benchmark/Alls_Well_That_Ends_Well.txt", character(), quote = "")
+data("awtew")
 pattern <- "[Ll]ord"
 
 run_test <- function(func) {
