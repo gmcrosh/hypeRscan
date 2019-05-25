@@ -30,13 +30,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // hs_str_location
-IntegerVector hs_str_location(CharacterVector Rstring, String Rpattern);
+Rcpp::IntegerVector hs_str_location(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern);
 RcppExport SEXP _hypeRscan_hs_str_location(SEXP RstringSEXP, SEXP RpatternSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< CharacterVector >::type Rstring(RstringSEXP);
-    Rcpp::traits::input_parameter< String >::type Rpattern(RpatternSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Rstring(RstringSEXP);
+    Rcpp::traits::input_parameter< Rcpp::String >::type Rpattern(RpatternSEXP);
     rcpp_result_gen = Rcpp::wrap(hs_str_location(Rstring, Rpattern));
     return rcpp_result_gen;
 END_RCPP
