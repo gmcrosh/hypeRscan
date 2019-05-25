@@ -6,7 +6,7 @@
 using namespace Rcpp;
 
 // hs_str_count
-Rcpp::NumericVector hs_str_count(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern);
+Rcpp::IntegerVector hs_str_count(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern);
 RcppExport SEXP _hypeRscan_hs_str_count(SEXP RstringSEXP, SEXP RpatternSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;

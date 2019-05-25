@@ -10,6 +10,7 @@ test_that("hs_str_count of factor is the count of patterns", {
   expect_equal(hs_str_count(factor(c("a","b")),"a"), c(1,0))
 })
 
-test_that("hs_str_count of missing is the zero", {
-  expect_equal(hs_str_count(NA,"a"), 0)
+test_that("hs_str_count of missing is a missing", {
+  expect_equal(hs_str_count(c(NA),"a"), as.integer(c(NA)))
+  expect_equal(hs_str_count(c(NA,"a"),"a"), c(NA,1))
 })
