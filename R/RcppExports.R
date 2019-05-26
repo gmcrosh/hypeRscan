@@ -13,3 +13,11 @@ hs_str_location <- function(Rstring, Rpattern) {
     .Call(`_hypeRscan_hs_str_location`, Rstring, Rpattern)
 }
 
+hs_verion <- function() {
+    .Call(`_hypeRscan_hs_verion`)
+}
+
+hs_platform <- function() {
+    .Call(`_hypeRscan_hs_platform`)
+}
+

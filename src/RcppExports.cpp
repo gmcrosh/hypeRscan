@@ -41,11 +41,33 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// hs_verion
+Rcpp::String hs_verion();
+RcppExport SEXP _hypeRscan_hs_verion() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(hs_verion());
+    return rcpp_result_gen;
+END_RCPP
+}
+// hs_platform
+Rcpp::List hs_platform();
+RcppExport SEXP _hypeRscan_hs_platform() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(hs_platform());
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_hypeRscan_hs_str_count", (DL_FUNC) &_hypeRscan_hs_str_count, 2},
     {"_hypeRscan_hs_str_detect", (DL_FUNC) &_hypeRscan_hs_str_detect, 2},
     {"_hypeRscan_hs_str_location", (DL_FUNC) &_hypeRscan_hs_str_location, 2},
+    {"_hypeRscan_hs_verion", (DL_FUNC) &_hypeRscan_hs_verion, 0},
+    {"_hypeRscan_hs_platform", (DL_FUNC) &_hypeRscan_hs_platform, 0},
     {NULL, NULL, 0}
 };
 
