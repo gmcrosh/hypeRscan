@@ -24,11 +24,14 @@ Rcpp::LogicalVector hs_str_detect(Rcpp::CharacterVector Rstring,
     hs_scratch_t *scratch = NULL;
     hs_alloc_scratch(database, &scratch);
     for(int i = 0; i < n; ++i) {
-      matchDetect = false;
-      cppstring = std::string(Rstring[i]);
-      hs_scan(database, cppstring.c_str(), cppstring.size(), 0, scratch,
-              detectHandler, &matchDetect);
-      out[i] = matchDetect;
+      if (Rstring[i] == NA_STRING) {
+        out[i] = NA_LOGICAL;
+      } else {
+        matchDetect = false;
+        cppstring = std::string(Rstring[i]);
+        hs_scan(database, cppstring.c_str(), cppstring.size(), 0, scratch,
+                detectHandler, &matchDetect);
+        out[i] = matchDetect;
     }
     hs_free_scratch(scratch);
     hs_free_database(database);
