@@ -32,6 +32,7 @@ Rcpp::LogicalVector hs_str_detect(Rcpp::CharacterVector Rstring,
         hs_scan(database, cppstring.c_str(), cppstring.size(), 0, scratch,
                 detectHandler, &matchDetect);
         out[i] = matchDetect;
+      }
     }
     hs_free_scratch(scratch);
     hs_free_database(database);
