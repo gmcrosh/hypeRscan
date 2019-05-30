@@ -29,15 +29,15 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// hs_str_location
-Rcpp::IntegerVector hs_str_location(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern);
-RcppExport SEXP _hypeRscan_hs_str_location(SEXP RstringSEXP, SEXP RpatternSEXP) {
+// hs_str_locate
+Rcpp::IntegerVector hs_str_locate(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern);
+RcppExport SEXP _hypeRscan_hs_str_locate(SEXP RstringSEXP, SEXP RpatternSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Rstring(RstringSEXP);
     Rcpp::traits::input_parameter< Rcpp::String >::type Rpattern(RpatternSEXP);
-    rcpp_result_gen = Rcpp::wrap(hs_str_location(Rstring, Rpattern));
+    rcpp_result_gen = Rcpp::wrap(hs_str_locate(Rstring, Rpattern));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -65,7 +65,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_hypeRscan_hs_str_count", (DL_FUNC) &_hypeRscan_hs_str_count, 2},
     {"_hypeRscan_hs_str_detect", (DL_FUNC) &_hypeRscan_hs_str_detect, 2},
-    {"_hypeRscan_hs_str_location", (DL_FUNC) &_hypeRscan_hs_str_location, 2},
+    {"_hypeRscan_hs_str_locate", (DL_FUNC) &_hypeRscan_hs_str_locate, 2},
     {"_hypeRscan_hs_verion", (DL_FUNC) &_hypeRscan_hs_verion, 0},
     {"_hypeRscan_hs_platform", (DL_FUNC) &_hypeRscan_hs_platform, 0},
     {NULL, NULL, 0}

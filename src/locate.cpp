@@ -19,8 +19,8 @@ static int locateHandler(unsigned int id, unsigned long long from,
 }
 
 // [[Rcpp::export]]
-Rcpp::IntegerVector hs_str_location(Rcpp::CharacterVector Rstring, 
-                                    Rcpp::String Rpattern) {
+Rcpp::IntegerVector hs_str_locate(Rcpp::CharacterVector Rstring, 
+                                  Rcpp::String Rpattern) {
     int n = Rstring.size();
     Rcpp::IntegerVector out(n*2);
     std::string cppstring, cpppattern;
