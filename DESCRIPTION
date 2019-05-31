@@ -1,15 +1,16 @@
 Package: hypeRscan
 Type: Package
-Title: What the Package Does in One 'Title Case' Line
-Version: 1.0
+Title: Fast regular expressions
+Version: 0.0.9000
 Date: 2019-05-14
-Author: Your Name
-Maintainer: Your Name <your@email.com>
-Description: One paragraph description of what the package does as one or
-        more full sentences.
+Author: Graham Crosh
+Maintainer: Graham Crosh <gmcrosh@gmail.com>
+Description: Bindings to hyperscan library for fast regular expressions
+    in R using modern instruction sets!
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.0)
 LinkingTo: Rcpp
 RoxygenNote: 6.1.1
+SystemRequirements: Hyperscan >= 5.0 
 Suggests: 
     testthat
