@@ -9,13 +9,26 @@ static int countHandler(unsigned int id, unsigned long long from,
   return 0;
 }
 
+//' Count the number of matches in a string.
+//'
+//' @param string Input character vector.
+//' @param pattern Pattern to look for.
+//'
+//' @return An integer vector.
+//' @export
+//'
+//' @examples
+//' fruit <- c("apple", "banana", "pear", "pineapple")
+//' str_count(fruit, "a")
+//' str_count(fruit, "p")
+//' str_count(fruit, "e")
 // [[Rcpp::export]]
-Rcpp::IntegerVector hs_str_count(Rcpp::CharacterVector Rstring, 
-                                 Rcpp::String Rpattern) {
-    int n = Rstring.size();
+Rcpp::IntegerVector hs_str_count(Rcpp::CharacterVector string, 
+                                 Rcpp::String pattern) {
+    int n = string.size();
     Rcpp::IntegerVector out(n);
     std::string cppstring, cpppattern;
-    cpppattern = std::string(Rpattern);
+    cpppattern = std::string(pattern);
     hs_database_t *database;
     hs_compile_error_t *compile_err;
     hs_compile(cpppattern.c_str(), HS_FLAG_DOTALL, HS_MODE_BLOCK,
@@ -25,10 +38,10 @@ Rcpp::IntegerVector hs_str_count(Rcpp::CharacterVector Rstring,
     size_t matchCount;
     for(int i = 0; i < n; ++i) {
       matchCount = 0;
-      if (Rstring[i] == NA_STRING) {
+      if (string[i] == NA_STRING) {
         out[i] = NA_INTEGER;
       } else {
-        cppstring = std::string(Rstring[i]);
+        cppstring = std::string(string[i]);
         hs_scan(database, cppstring.c_str(), cppstring.size(), 0,
                 scratch, countHandler, &matchCount);
         out[i] = matchCount;
