@@ -26,7 +26,7 @@ Rcpp::CharacterVector hs_str_replace(Rcpp::CharacterVector string,
     Rcpp::CharacterVector out(n);
     std::string str, pat, rep;
     pat = std::string(pattern);
-    str = std::string(replacement);
+    rep = std::string(replacement);
     hs_database_t *database;
     hs_compile_error_t *compile_err;
     hs_compile(pat.c_str(), HS_FLAG_SOM_LEFTMOST, HS_MODE_BLOCK,
