@@ -26,6 +26,19 @@ hs_str_locate <- function(Rstring, Rpattern) {
     .Call(`_hypeRscan_hs_str_locate`, Rstring, Rpattern)
 }
 
+#' Replace the first instance of a pattern
+#' 
+#' @param string Input character vector.
+#' @param pattern Pattern to look for.
+#' @param replacement String to replace pattern with.
+#'
+#' @return A charcter vector.
+#' @export
+#'
+#' @examples
+#' fruit <- c("apple", "banana", "pear", "pineapple")
+#' str_count(fruit, "app","simi")
+#' str_count(fruit, "p", "P)
 hs_str_replace <- function(string, pattern, replacement) {
     .Call(`_hypeRscan_hs_str_replace`, string, pattern, replacement)
 }

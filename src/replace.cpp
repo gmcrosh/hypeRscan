@@ -18,6 +18,19 @@ static int locateHandler(unsigned int id, unsigned long long from,
   return 0;
 }
 
+//' Replace the first instance of a pattern
+//' 
+//' @param string Input character vector.
+//' @param pattern Pattern to look for.
+//' @param replacement String to replace pattern with.
+//'
+//' @return A charcter vector.
+//' @export
+//'
+//' @examples
+//' fruit <- c("apple", "banana", "pear", "pineapple")
+//' str_count(fruit, "app","simi")
+//' str_count(fruit, "p", "P)
 // [[Rcpp::export]]
 Rcpp::CharacterVector hs_str_replace(Rcpp::CharacterVector string, 
                                    Rcpp::String pattern,
