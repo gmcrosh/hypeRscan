@@ -19,9 +19,9 @@ static int countHandler(unsigned int id, unsigned long long from,
 //'
 //' @examples
 //' fruit <- c("apple", "banana", "pear", "pineapple")
-//' str_count(fruit, "a")
-//' str_count(fruit, "p")
-//' str_count(fruit, "e")
+//' hs_str_count(fruit, "a")
+//' hs_str_count(fruit, "p")
+//' hs_str_count(fruit, "e")
 // [[Rcpp::export]]
 Rcpp::IntegerVector hs_str_count(Rcpp::CharacterVector string, 
                                  Rcpp::String pattern) {

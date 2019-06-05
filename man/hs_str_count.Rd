@@ -19,7 +19,7 @@ Count the number of matches in a string.
 }
 \examples{
 fruit <- c("apple", "banana", "pear", "pineapple")
-str_count(fruit, "a")
-str_count(fruit, "p")
-str_count(fruit, "e")
+hs_str_count(fruit, "a")
+hs_str_count(fruit, "p")
+hs_str_count(fruit, "e")
 }

@@ -29,8 +29,8 @@ static int locateHandler(unsigned int id, unsigned long long from,
 //'
 //' @examples
 //' fruit <- c("apple", "banana", "pear", "pineapple")
-//' str_count(fruit, "app","simi")
-//' str_count(fruit, "p", "P)
+//' hs_str_replace(fruit, "app","simi")
+//' hs_str_replace(fruit, "p", "P)
 // [[Rcpp::export]]
 Rcpp::CharacterVector hs_str_replace(Rcpp::CharacterVector string, 
                                    Rcpp::String pattern,

@@ -11,9 +11,9 @@
 #'
 #' @examples
 #' fruit <- c("apple", "banana", "pear", "pineapple")
-#' str_count(fruit, "a")
-#' str_count(fruit, "p")
-#' str_count(fruit, "e")
+#' hs_str_count(fruit, "a")
+#' hs_str_count(fruit, "p")
+#' hs_str_count(fruit, "e")
 hs_str_count <- function(string, pattern) {
     .Call(`_hypeRscan_hs_str_count`, string, pattern)
 }
@@ -49,8 +49,8 @@ hs_str_locate <- function(Rstring, Rpattern) {
 #'
 #' @examples
 #' fruit <- c("apple", "banana", "pear", "pineapple")
-#' str_count(fruit, "app","simi")
-#' str_count(fruit, "p", "P)
+#' hs_str_replace(fruit, "app","simi")
+#' hs_str_replace(fruit, "p", "P)
 hs_str_replace <- function(string, pattern, replacement) {
     .Call(`_hypeRscan_hs_str_replace`, string, pattern, replacement)
 }
