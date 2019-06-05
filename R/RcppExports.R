@@ -18,6 +18,18 @@ hs_str_count <- function(string, pattern) {
     .Call(`_hypeRscan_hs_str_count`, string, pattern)
 }
 
+#' Detect if the pattern is in a string
+#' 
+#' @param string Input character vector.
+#' @param pattern Pattern to look for.
+#'
+#' @return A logical vector.
+#' @export
+#'
+#' @examples
+#' fruit <- c("apple", "banana", "pear", "pineapple")
+#' hs_str_detect(fruit, "app")
+#' hs_str_detect(fruit, "p")
 hs_str_detect <- function(Rstring, Rpattern) {
     .Call(`_hypeRscan_hs_str_detect`, Rstring, Rpattern)
 }

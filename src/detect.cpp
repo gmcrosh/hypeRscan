@@ -9,6 +9,18 @@ static int detectHandler(unsigned int id, unsigned long long from,
   return 0;
 }
 
+//' Detect if the pattern is in a string
+//' 
+//' @param string Input character vector.
+//' @param pattern Pattern to look for.
+//'
+//' @return A logical vector.
+//' @export
+//'
+//' @examples
+//' fruit <- c("apple", "banana", "pear", "pineapple")
+//' hs_str_detect(fruit, "app")
+//' hs_str_detect(fruit, "p")
 // [[Rcpp::export]]
 Rcpp::LogicalVector hs_str_detect(Rcpp::CharacterVector Rstring, 
                                   Rcpp::String Rpattern) {
