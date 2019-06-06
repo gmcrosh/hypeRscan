@@ -18,6 +18,18 @@ static int locateHandler(unsigned int id, unsigned long long from,
   return 0;
 }
 
+//' Locate the first instance of a pattern
+//' 
+//' @param string Input character vector.
+//' @param pattern Pattern to look for.
+//'
+//' @return A integer matrix.
+//' @export
+//'
+//' @examples
+//' fruit <- c("apple", "banana", "pear", "pineapple")
+//' hs_str_locate(fruit, "app")
+//' hs_str_locate(fruit, "p")
 // [[Rcpp::export]]
 Rcpp::IntegerVector hs_str_locate(Rcpp::CharacterVector Rstring, 
                                   Rcpp::String Rpattern) {
