@@ -22,12 +22,12 @@ static int detectHandler(unsigned int id, unsigned long long from,
 //' hs_str_detect(fruit, "app")
 //' hs_str_detect(fruit, "p")
 // [[Rcpp::export]]
-Rcpp::LogicalVector hs_str_detect(Rcpp::CharacterVector Rstring, 
-                                  Rcpp::String Rpattern) {
-    int n = Rstring.size();
+Rcpp::LogicalVector hs_str_detect(Rcpp::CharacterVector string, 
+                                  Rcpp::String pattern) {
+    int n = string.size();
     Rcpp::LogicalVector out(n);
     std::string cppstring, cpppattern;
-    cpppattern = std::string(Rpattern);
+    cpppattern = std::string(pattern);
     bool matchDetect;
     hs_database_t *database;
     hs_compile_error_t *compile_err;
@@ -36,11 +36,11 @@ Rcpp::LogicalVector hs_str_detect(Rcpp::CharacterVector Rstring,
     hs_scratch_t *scratch = NULL;
     hs_alloc_scratch(database, &scratch);
     for(int i = 0; i < n; ++i) {
-      if (Rstring[i] == NA_STRING) {
+      if (string[i] == NA_STRING) {
         out[i] = NA_LOGICAL;
       } else {
         matchDetect = false;
-        cppstring = std::string(Rstring[i]);
+        cppstring = std::string(string[i]);
         hs_scan(database, cppstring.c_str(), cppstring.size(), 0, scratch,
                 detectHandler, &matchDetect);
         out[i] = matchDetect;

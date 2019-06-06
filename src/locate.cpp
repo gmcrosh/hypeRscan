@@ -31,12 +31,12 @@ static int locateHandler(unsigned int id, unsigned long long from,
 //' hs_str_locate(fruit, "app")
 //' hs_str_locate(fruit, "p")
 // [[Rcpp::export]]
-Rcpp::IntegerVector hs_str_locate(Rcpp::CharacterVector Rstring, 
-                                  Rcpp::String Rpattern) {
-    int n = Rstring.size();
+Rcpp::IntegerVector hs_str_locate(Rcpp::CharacterVector string, 
+                                  Rcpp::String pattern) {
+    int n = string.size();
     Rcpp::IntegerVector out(n*2);
     std::string cppstring, cpppattern;
-    cpppattern = std::string(Rpattern);
+    cpppattern = std::string(pattern);
     hs_database_t *database;
     hs_compile_error_t *compile_err;
     hs_compile(cpppattern.c_str(), HS_FLAG_SOM_LEFTMOST, HS_MODE_BLOCK,
@@ -47,7 +47,7 @@ Rcpp::IntegerVector hs_str_locate(Rcpp::CharacterVector Rstring,
       Location loc;
       loc.finish = 0;
       loc.start = 0;
-      cppstring = std::string(Rstring[i]);
+      cppstring = std::string(string[i]);
       hs_scan(database, cppstring.c_str(), cppstring.size(), 0, scratch,
               locateHandler, &loc);
       if (loc.finish == 0) {

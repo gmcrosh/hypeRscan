@@ -18,26 +18,26 @@ BEGIN_RCPP
 END_RCPP
 }
 // hs_str_detect
-Rcpp::LogicalVector hs_str_detect(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern);
-RcppExport SEXP _hypeRscan_hs_str_detect(SEXP RstringSEXP, SEXP RpatternSEXP) {
+Rcpp::LogicalVector hs_str_detect(Rcpp::CharacterVector string, Rcpp::String pattern);
+RcppExport SEXP _hypeRscan_hs_str_detect(SEXP stringSEXP, SEXP patternSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Rstring(RstringSEXP);
-    Rcpp::traits::input_parameter< Rcpp::String >::type Rpattern(RpatternSEXP);
-    rcpp_result_gen = Rcpp::wrap(hs_str_detect(Rstring, Rpattern));
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type string(stringSEXP);
+    Rcpp::traits::input_parameter< Rcpp::String >::type pattern(patternSEXP);
+    rcpp_result_gen = Rcpp::wrap(hs_str_detect(string, pattern));
     return rcpp_result_gen;
 END_RCPP
 }
 // hs_str_locate
-Rcpp::IntegerVector hs_str_locate(Rcpp::CharacterVector Rstring, Rcpp::String Rpattern);
-RcppExport SEXP _hypeRscan_hs_str_locate(SEXP RstringSEXP, SEXP RpatternSEXP) {
+Rcpp::IntegerVector hs_str_locate(Rcpp::CharacterVector string, Rcpp::String pattern);
+RcppExport SEXP _hypeRscan_hs_str_locate(SEXP stringSEXP, SEXP patternSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Rstring(RstringSEXP);
-    Rcpp::traits::input_parameter< Rcpp::String >::type Rpattern(RpatternSEXP);
-    rcpp_result_gen = Rcpp::wrap(hs_str_locate(Rstring, Rpattern));
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type string(stringSEXP);
+    Rcpp::traits::input_parameter< Rcpp::String >::type pattern(patternSEXP);
+    rcpp_result_gen = Rcpp::wrap(hs_str_locate(string, pattern));
     return rcpp_result_gen;
 END_RCPP
 }

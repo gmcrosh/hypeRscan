@@ -4,7 +4,7 @@
 \alias{hs_str_locate}
 \title{Locate the first instance of a pattern}
 \usage{
-hs_str_locate(Rstring, Rpattern)
+hs_str_locate(string, pattern)
 }
 \arguments{
 \item{string}{Input character vector.}

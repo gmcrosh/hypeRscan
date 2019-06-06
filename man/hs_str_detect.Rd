@@ -4,7 +4,7 @@
 \alias{hs_str_detect}
 \title{Detect if the pattern is in a string}
 \usage{
-hs_str_detect(Rstring, Rpattern)
+hs_str_detect(string, pattern)
 }
 \arguments{
 \item{string}{Input character vector.}

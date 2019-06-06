@@ -30,8 +30,8 @@ hs_str_count <- function(string, pattern) {
 #' fruit <- c("apple", "banana", "pear", "pineapple")
 #' hs_str_detect(fruit, "app")
 #' hs_str_detect(fruit, "p")
-hs_str_detect <- function(Rstring, Rpattern) {
-    .Call(`_hypeRscan_hs_str_detect`, Rstring, Rpattern)
+hs_str_detect <- function(string, pattern) {
+    .Call(`_hypeRscan_hs_str_detect`, string, pattern)
 }
 
 #' Locate the first instance of a pattern
@@ -46,8 +46,8 @@ hs_str_detect <- function(Rstring, Rpattern) {
 #' fruit <- c("apple", "banana", "pear", "pineapple")
 #' hs_str_locate(fruit, "app")
 #' hs_str_locate(fruit, "p")
-hs_str_locate <- function(Rstring, Rpattern) {
-    .Call(`_hypeRscan_hs_str_locate`, Rstring, Rpattern)
+hs_str_locate <- function(string, pattern) {
+    .Call(`_hypeRscan_hs_str_locate`, string, pattern)
 }
 
 #' Replace the first instance of a pattern
