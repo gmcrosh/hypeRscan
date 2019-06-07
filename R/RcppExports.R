@@ -71,6 +71,13 @@ hs_verion <- function() {
     .Call(`_hypeRscan_hs_verion`)
 }
 
+#' Utility function to determine what CPU optimizations can be used
+#'
+#' @return list with cpu features and platform.
+#' @export
+#'
+#' @examples
+#' hs_platform()
 hs_platform <- function() {
     .Call(`_hypeRscan_hs_platform`)
 }

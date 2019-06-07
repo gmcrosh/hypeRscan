@@ -8,6 +8,13 @@ Rcpp::String hs_verion() {
   return version;
 }
 
+//' Utility function to determine what CPU optimizations can be used
+//'
+//' @return list with cpu features and platform.
+//' @export
+//'
+//' @examples
+//' hs_platform()
 // [[Rcpp::export]]
 Rcpp::List hs_platform() {
   hs_platform_info_t plat;
