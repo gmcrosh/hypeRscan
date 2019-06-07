@@ -50,6 +50,10 @@ hs_str_locate <- function(string, pattern) {
     .Call(`_hypeRscan_hs_str_locate`, string, pattern)
 }
 
+hs_str_locate_all <- function(string, pattern) {
+    .Call(`_hypeRscan_hs_str_locate_all`, string, pattern)
+}
+
 #' Replace the first instance of a pattern
 #' 
 #' @param string Input character vector.
