@@ -35,6 +35,18 @@ Rcpp::IntegerVector loc_helper(std::vector<Location> loc) {
   return out;
 }
 
+//' Locate the all instances of a pattern
+//' 
+//' @param string Input character vector.
+//' @param pattern Pattern to look for.
+//'
+//' @return A list of integer matrix.
+//' @export
+//'
+//' @examples
+//' fruit <- c("apple", "banana", "pear", "pineapple")
+//' hs_str_locate_all(fruit, "app")
+//' hs_str_locate_all(fruit, "p")
 // [[Rcpp::export]]
 Rcpp::List hs_str_locate_all(Rcpp::CharacterVector string, 
                                   Rcpp::String pattern) {
