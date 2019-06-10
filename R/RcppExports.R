@@ -50,6 +50,18 @@ hs_str_locate <- function(string, pattern) {
     .Call(`_hypeRscan_hs_str_locate`, string, pattern)
 }
 
+#' Locate the all instances of a pattern
+#' 
+#' @param string Input character vector.
+#' @param pattern Pattern to look for.
+#'
+#' @return A list of integer matrix.
+#' @export
+#'
+#' @examples
+#' fruit <- c("apple", "banana", "pear", "pineapple")
+#' hs_str_locate_all(fruit, "app")
+#' hs_str_locate_all(fruit, "p")
 hs_str_locate_all <- function(string, pattern) {
     .Call(`_hypeRscan_hs_str_locate_all`, string, pattern)
 }
