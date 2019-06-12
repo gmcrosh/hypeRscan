@@ -6,5 +6,7 @@ dist: xenial
 
 addons:
   apt:
+    sources:
+    - sourceline: "deb http://archive.ubuntu.com/ubuntu/ xenial-backports universe"
     packages:
       - libhyperscan-dev
