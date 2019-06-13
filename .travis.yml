@@ -7,7 +7,6 @@ dist: xenial
 addons:
   apt:
     packages:
-    - git
     - cmake
     - g++
     - libboost-all-dev
