@@ -9,4 +9,4 @@ mkdir build_hyperscan
 cd build_hyperscan
 cmake ../hyperscan-5.1.1/ -DBUILD_STATIC_AND_SHARED=ON
 sudo make install
-ldconfig
+sudo ldconfig
