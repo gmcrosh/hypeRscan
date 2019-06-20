@@ -83,6 +83,13 @@ hs_str_replace <- function(string, pattern, replacement) {
     .Call(`_hypeRscan_hs_str_replace`, string, pattern, replacement)
 }
 
+#' Utility function to determine what version of hyperscan library
+#'
+#' @return string with library version.
+#' @export
+#'
+#' @examples
+#' hs_verion()
 hs_verion <- function() {
     .Call(`_hypeRscan_hs_verion`)
 }

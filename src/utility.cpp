@@ -2,6 +2,13 @@
 #include <hs.h>
 #include <iostream>
 
+//' Utility function to determine what version of hyperscan library
+//'
+//' @return string with library version.
+//' @export
+//'
+//' @examples
+//' hs_verion()
 // [[Rcpp::export]]
 Rcpp::String hs_verion() {
   std::string version = hs_version();
