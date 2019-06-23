@@ -65,11 +65,15 @@ Rcpp::CharacterVector hs_str_replace_all(Rcpp::CharacterVector string,
     hs_scratch_t *scratch = NULL;
     hs_alloc_scratch(database, &scratch);
     for(int i = 0; i < n; ++i) {
-      std::vector<Location> loc;
-      cppstring = std::string(string[i]);
-      hs_scan(database, cppstring.c_str(), cppstring.size(), 0, scratch,
-              locateAllHandler, &loc);
-      out[i] = replace_helper(loc, cppstring, cpprep);
+      if (string[i] == NA_STRING) {
+        out[i] = NA_STRING;
+      } else {
+        std::vector<Location> loc;
+        cppstring = std::string(string[i]);
+        hs_scan(database, cppstring.c_str(), cppstring.size(), 0, scratch,
+                locateAllHandler, &loc);
+        out[i] = replace_helper(loc, cppstring, cpprep);
+      }
     }
     hs_free_scratch(scratch);
     hs_free_database(database);
