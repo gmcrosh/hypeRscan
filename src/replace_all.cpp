@@ -36,18 +36,19 @@ Rcpp::String replace_helper(std::vector<Location> loc,
   return rout;
 }
 
-//' Locate the all instances of a pattern
+//' Replace each instance of a pattern
 //' 
 //' @param string Input character vector.
 //' @param pattern Pattern to look for.
+//' @param replacement String to replace pattern with.
 //'
-//' @return A list of integer matrix.
+//' @return A charcter vector.
 //' @export
 //'
 //' @examples
 //' fruit <- c("apple", "banana", "pear", "pineapple")
-//' hs_str_locate_all(fruit, "app")
-//' hs_str_locate_all(fruit, "p")
+//' hs_str_replace_all(fruit, "app","simi")
+//' hs_str_replace_all(fruit, "p", "P")
 // [[Rcpp::export]]
 Rcpp::CharacterVector hs_str_replace_all(Rcpp::CharacterVector string, 
                               Rcpp::String pattern,

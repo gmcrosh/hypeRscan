@@ -78,23 +78,24 @@ hs_str_locate_all <- function(string, pattern) {
 #' @examples
 #' fruit <- c("apple", "banana", "pear", "pineapple")
 #' hs_str_replace(fruit, "app","simi")
-#' hs_str_replace(fruit, "p", "P)
+#' hs_str_replace(fruit, "p", "P")
 hs_str_replace <- function(string, pattern, replacement) {
     .Call(`_hypeRscan_hs_str_replace`, string, pattern, replacement)
 }
 
-#' Locate the all instances of a pattern
+#' Replace each instance of a pattern
 #' 
 #' @param string Input character vector.
 #' @param pattern Pattern to look for.
+#' @param replacement String to replace pattern with.
 #'
-#' @return A list of integer matrix.
+#' @return A charcter vector.
 #' @export
 #'
 #' @examples
 #' fruit <- c("apple", "banana", "pear", "pineapple")
-#' hs_str_locate_all(fruit, "app")
-#' hs_str_locate_all(fruit, "p")
+#' hs_str_replace_all(fruit, "app","simi")
+#' hs_str_replace_all(fruit, "p", "P")
 hs_str_replace_all <- function(string, pattern, replacement) {
     .Call(`_hypeRscan_hs_str_replace_all`, string, pattern, replacement)
 }
