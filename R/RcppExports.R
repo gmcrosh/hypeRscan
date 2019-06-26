@@ -34,6 +34,21 @@ hs_str_detect <- function(string, pattern) {
     .Call(`_hypeRscan_hs_str_detect`, string, pattern)
 }
 
+#' Extract the first instance of a pattern
+#' 
+#' @param string Input character vector.
+#' @param pattern Pattern to look for.
+#'
+#' @return A charcter vector.
+#' @export
+#'
+#' @examples
+#' fruit <- c("apple", "banana", "pear", "pineapple")
+#' hs_str_extract(fruit, "[aeoiu]")
+hs_str_extract <- function(string, pattern) {
+    .Call(`_hypeRscan_hs_str_extract`, string, pattern)
+}
+
 #' Locate the first instance of a pattern
 #' 
 #' @param string Input character vector.
