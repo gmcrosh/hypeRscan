@@ -54,7 +54,7 @@ Rcpp::CharacterVector hs_str_extract(Rcpp::CharacterVector string,
         if (loc.finish == 0) {
           out[i] = NA_STRING;
         } else {
-          out[i] = str.substr(loc.start, loc.finish);
+          out[i] = str.substr(loc.start, loc.finish - loc.start);
         }
       }
     }
