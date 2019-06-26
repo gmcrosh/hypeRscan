@@ -19,5 +19,5 @@ Extract the first instance of a pattern
 }
 \examples{
 fruit <- c("apple", "banana", "pear", "pineapple")
-hs_str_replace(fruit, "[aeoiu]")
+hs_str_extract(fruit, "[aeoiu]")
 }

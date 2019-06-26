@@ -44,7 +44,7 @@ hs_str_detect <- function(string, pattern) {
 #'
 #' @examples
 #' fruit <- c("apple", "banana", "pear", "pineapple")
-#' hs_str_replace(fruit, "[aeoiu]")
+#' hs_str_extract(fruit, "[aeoiu]")
 hs_str_extract <- function(string, pattern) {
     .Call(`_hypeRscan_hs_str_extract`, string, pattern)
 }
