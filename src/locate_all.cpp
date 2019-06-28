@@ -2,24 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <hs.h>
-
-class Location {
-  public:
-  int start;
-  int finish;
-};
-
-static int locateAllHandler(unsigned int id, unsigned long long from,
-                        unsigned long long to, unsigned int flags, void *ctx) {
-  
-  std::vector<Location> *loc = reinterpret_cast<std::vector<Location> *>(ctx);
-  
-  Location newlocation;
-  newlocation.start = static_cast<int>(from);
-  newlocation.finish = static_cast<int>(to);
-  loc->push_back(newlocation);
-  return 0;
-}
+#include "location.h"
 
 Rcpp::IntegerVector loc_helper(std::vector<Location> loc) {
   int n = loc.size();

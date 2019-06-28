@@ -12,4 +12,10 @@ int locateHandler(unsigned int id,
                   unsigned long long to,
                   unsigned int flags,
                   void *ctx);
+
+int locateAllHandler(unsigned int id,
+                     unsigned long long from,
+                     unsigned long long to, 
+                     unsigned int flags, 
+                     void *ctx);
 #endif
