@@ -1,13 +1,7 @@
 #include <Rcpp.h>
 #include <hs.h>
 #include <iostream>
-
-static int detectHandler(unsigned int id, unsigned long long from,
-                        unsigned long long to, unsigned int flags, void *ctx) {
-  bool *matches = reinterpret_cast<bool *>(ctx);
-  *matches = true;
-  return 0;
-}
+#include "handler.h"
 
 //' Detect if the pattern is in a string
 //' 

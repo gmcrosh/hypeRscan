@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <hs.h>
-#include "location.h"
+#include "handler.h"
 
 Rcpp::IntegerVector loc_helper(std::vector<Location> loc) {
   int n = loc.size();

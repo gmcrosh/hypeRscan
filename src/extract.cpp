@@ -1,7 +1,7 @@
 #include <Rcpp.h>
 #include <iostream>
 #include <hs.h>
-#include "location.h"
+#include "handler.h"
 
 //' Extract the first instance of a pattern
 //' 

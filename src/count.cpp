@@ -1,13 +1,7 @@
 #include <Rcpp.h>
 #include <hs.h>
 #include <iostream>
-
-static int countHandler(unsigned int id, unsigned long long from,
-                        unsigned long long to, unsigned int flags, void *ctx) {
-  size_t *matches = reinterpret_cast<size_t *>(ctx);
-  (*matches)++;
-  return 0;
-}
+#include "handler.h"
 
 //' Count the number of matches in a string.
 //'
