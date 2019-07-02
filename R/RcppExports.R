@@ -137,3 +137,19 @@ hs_platform <- function() {
     .Call(`_hypeRscan_hs_platform`)
 }
 
+#' Detect which strings match a pattern
+#' 
+#' @param string Input character vector.
+#' @param pattern Pattern to look for.
+#'
+#' @return A integer vector of length of matches.
+#' @export
+#'
+#' @examples
+#' fruit <- c("apple", "banana", "pear", "pineapple")
+#' hs_str_which(fruit, "a")
+#' hs_str_which(fruit, "p")
+hs_str_which <- function(string, pattern) {
+    .Call(`_hypeRscan_hs_str_which`, string, pattern)
+}
+
