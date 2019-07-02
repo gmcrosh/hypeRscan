@@ -2,39 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <hs.h>
-
-class Location {
-  public:
-  int start;
-  int finish;
-};
-
-static int locateAllHandler(unsigned int id, unsigned long long from,
-                        unsigned long long to, unsigned int flags, void *ctx) {
-  
-  std::vector<Location> *loc = reinterpret_cast<std::vector<Location> *>(ctx);
-  
-  Location newlocation;
-  newlocation.start = static_cast<int>(from);
-  newlocation.finish = static_cast<int>(to);
-  loc->push_back(newlocation);
-  return 0;
-}
-
-Rcpp::String replace_helper(std::vector<Location> loc,
-                            std::string str,
-                            std::string rep) {
-  int n = loc.size();
-  Location holder;
-  Rcpp::String rout;
-  std::string out = str;
-  for(int i = n-1; i >= 0; --i) {
-    holder = loc[i];
-    out = out.substr(0, holder.start) + rep + out.substr(holder.finish, out.size());
-  }
-  rout = Rcpp::String(out);
-  return rout;
-}
+#include "handler.h"
 
 //' Replace each instance of a pattern
 //' 
