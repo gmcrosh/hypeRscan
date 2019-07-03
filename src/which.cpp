@@ -44,5 +44,10 @@ Rcpp::IntegerVector hs_str_which(Rcpp::CharacterVector string,
     }
     hs_free_scratch(scratch);
     hs_free_database(database);
-    return out[Rcpp::Range(0, cnt - 1)];
+    if (cnt == 0){
+      Rcpp::IntegerVector empty(0);
+      return empty;
+    } else {
+      return out[Rcpp::Range(0, cnt - 1)];
+    }
 }
