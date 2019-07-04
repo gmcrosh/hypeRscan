@@ -33,12 +33,19 @@ Rcpp::String replace_helper(std::vector<Location> loc,
                             std::string str,
                             std::string rep) {
   int n = loc.size();
-  Location holder;
+  Location holder, holder2;
   Rcpp::String rout;
   std::string out = str;
   for(int i = n-1; i >= 0; --i) {
     holder = loc[i];
-    out = out.substr(0, holder.start) + rep + out.substr(holder.finish, out.size());
+    if (i > 0) {
+      holder2 = loc[i -1];
+      if (holder.start != holder2.start) {
+        out = out.substr(0, holder.start) + rep + out.substr(holder.finish, out.size());
+      }
+    } else {
+      out = out.substr(0, holder.start) + rep + out.substr(holder.finish, out.size());
+    }
   }
   rout = Rcpp::String(out);
   return rout;
