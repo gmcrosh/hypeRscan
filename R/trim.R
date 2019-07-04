@@ -26,7 +26,7 @@ hs_str_trim_both <- function(string) {
 }
 
 hs_str_trim_left <- function(string) {
-  hs_str_replace_all(string, "^[ \t]","") 
+  hs_str_replace_all(string, "^[ \t]+","") 
 }
 
 hs_str_trim_right <- function(string) {

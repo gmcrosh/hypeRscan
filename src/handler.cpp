@@ -40,7 +40,9 @@ Rcpp::String replace_helper(std::vector<Location> loc,
     holder = loc[i];
     if (i > 0) {
       holder2 = loc[i -1];
-      if (holder.start != holder2.start) {
+      if (holder.start == holder2.start) {
+        loc[i - 1] = holder;
+      } else {
         out = out.substr(0, holder.start) + rep + out.substr(holder.finish, out.size());
       }
     } else {
