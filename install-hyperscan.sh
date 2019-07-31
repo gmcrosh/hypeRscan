@@ -11,3 +11,4 @@ set -ex
 #sudo make install
 #sudo ldconfig
 sudo dpkg -i hyperscan_5.1.1-1_amd64.deb
+sudo ldconfig
